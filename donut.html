@@ -1,0 +1,32 @@
+<html>
+   <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+
+   </head>
+	<body>
+	    <div id= "chart"></div>
+	  <script>
+		var chart= c3.generate({
+			data: {
+			columns: [
+				['India', 30],
+				['China', 90],
+				['US', 70]
+			],
+			type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+		     },
+           donut: {
+     		   title: "Number of forks"
+    		}
+		});
+		setTimeout(function () {
+    			chart.transform('donut');
+		}, 1000);
+	  </script>
+	</body>
+</html>
